@@ -50,13 +50,24 @@
             <div id="minutes" class="timer_box"></div>
             <div id="seconds" class="timer_box"></div>
         </div>
-
-
     </div>
-
 </section>
 <!-- END HEADER -->
+<section id="container" class="">
+    <div style="height: 700px">
 
+    </div>
+    <!--footer start-->
+    <footer class="site-footer">
+        <div class="text-center">
+            <a target="_blank" href="http://www.beian.miit.gov.cn/" style="color:white">津ICP备19007293号</a>
+            <a href="#" class="go-top">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+    </footer>
+    <!--footer end-->
+</section>
 
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="${static_resource}/static/js/jquery.js"></script>
