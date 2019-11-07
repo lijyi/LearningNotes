@@ -1,18 +1,20 @@
-<link rel="stylesheet" href="${static_resource}/static/editormd/css/editormd.css" />
-<div id="test-editor">
-    <textarea style="display:none;">### 关于 Editor.md
 
-**Editor.md** 是一款开源的、可嵌入的 Markdown 在线编辑器（组件），基于 CodeMirror、jQuery 和 Marked 构建。
-    </textarea>
+
+<link rel="stylesheet" href="${static_resource}/static/editormd/css/editormd.preview.css" />
+<div id="test-markdown-view">
+    <!-- Server-side output Markdown text -->
+    <textarea style="display:none;">${content}</textarea>
 </div>
 <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-<script src="${static_resource}/static/editormd/editormd.min.js"></script>
+<script src="${static_resource}/static/editormd/editormd.js"></script>
+<script src="${static_resource}/static/editormd/lib/marked.min.js"></script>
+<script src="${static_resource}/static/editormd/lib/prettify.min.js"></script>
 <script type="text/javascript">
     $(function() {
-        var editor = editormd("test-editor", {
-            // width  : "100%",
-            // height : "100%",
-            path   : "editormd/lib/"
+        var testView = editormd.markdownToHTML("test-markdown-view", {
+            // markdown : "[TOC]\n### Hello world!\n## Heading 2", // Also, you can dynamic set Markdown text
+            htmlDecode : true,  // Enable / disable HTML tag encode.
+            htmlDecode : "style"  // Note: If enabled, you should filter some dangerous HTML tags for website security.
         });
     });
 </script>
